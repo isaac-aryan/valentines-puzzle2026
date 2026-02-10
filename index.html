@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ Happy Valentine's Day ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <!-- ENVELOPE STAGE -->
+    <div id="envelopeStage">
+
+        <div class="letter-intro">
+        <p class="intro-text">
+            Dear Jessie,
+        </p>
+        <p class="intro-text">
+            Every milestone we've celebrated together, you've always drawn something for me, and they've always been my most treasured gifts. While I've tried unlocking some artistic skill, I think I'm much better suited to coding.
+        </p>
+        <p class="intro-text intro-text--final">
+            So here's this! 💝
+        </p>
+        </div>
+
+        <p class="envelope-instruction">Click to open your Valentine 💌</p>
+        
+        <div class="envelope" id="envelope">
+            <div class="envelope-heart" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" clip-rule="evenodd" /></svg>
+            </div>
+            <div class="envelope-flap">
+                <svg class="envelope-flap-outline" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                    <line x1="0" y1="0" x2="50" y2="50" stroke="#d4c4a8" stroke-width="3" vector-effect="non-scaling-stroke" />
+                    <line x1="50" y1="50" x2="100" y2="0" stroke="#d4c4a8" stroke-width="3" vector-effect="non-scaling-stroke" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="modal-inner">
+            <!-- VIEW: Puzzle -->
+            <div id="puzzleView" class="modal-view">
+                <h1 class="modal-title">Dear Jess...</h1>
+                <div class="puzzle-container" id="puzzleContainer">
+                    <div class="puzzle-grid-wrap" id="puzzleGridWrap">
+                        <div class="puzzle-grid" id="puzzleGrid"></div>
+                        <div class="puzzle-full-image-overlay" id="puzzleFullImageOverlay">
+                            <img src="images/full-image.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="move-counter" id="moveCounter">Moves: 0</div>
+                <div class="puzzle-reveal-text" id="puzzleRevealText">
+                    <p class="complete-line">...you complete me.</p>
+                    <p class="valentine-question">Happy Valentine's Day! ❤️</p>
+                    <button type="button" class="yes-only-btn" id="yesBtn">See what's inside 💝</button>
+                </div>
+            </div>
+
+            <!-- VIEW: Success -->
+            <div id="successView" class="modal-view">
+                <div class="success-content">
+                    <p class="success-yay">You make every day brighter! ✨</p>
+                    <p class="success-message">
+                        Thank you for being you. For your smile that lights up my world, your kindness that warms my heart, and for every moment we share together.
+                    </p>
+                    <div class="success-gif-wrap">
+                        <img src="otter_val.gif" alt="Valentine's celebration" />
+                    </div>
+                    
+                    <div class="love-notes">
+                        <h3>Things I love about you:</h3>
+                        <ul>
+                            <li>Your infectious laugh that makes everything better</li>
+                            <li>The way you always know how to cheer me up</li>
+                            <li>Your adventurous spirit and willingness to try new things</li>
+                            <li>How you make ordinary moments feel special</li>
+                            <li>Your compassion and the way you care for others</li>
+                            <li>Every single day I get to spend with you</li>
+                        </ul>
+                    </div>
+
+                    <p class="success-message">
+                        Here's to many more memories, adventures, and lazy Sunday mornings together. Happy Valentine's Day, my love! 💕
+                    </p>
+                    
+                    <button type="button" class="reset-btn" id="resetBtn">Start over ↻</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

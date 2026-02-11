@@ -420,19 +420,20 @@
                 opacity: 0;
             }
         }
-
         /* Success view */
         .container.container--success {
-            background: transparent;
-            box-shadow: none;
-            padding: 24px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding: 40px 36px;
+            max-height: calc(100vh - 48px);
+            overflow-y: auto;
         }
 
         .success-content {
-            background: white;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
         }
 
         .success-yay {
@@ -559,6 +560,24 @@
             }
             .puzzle-container {
                 max-width: min(360px, 40vh);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .container.container--success {
+                padding: 24px 20px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .container.container--success {
+                padding: 20px 16px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container.container--success {
+                padding: 16px 12px;
             }
         }
 

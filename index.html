@@ -4,31 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>❤️ Happy Valentine's Day ❤️</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Music Control -->
+    <audio id="bgMusic" loop>
+        <source src="music/background.mp3" type="audio/mpeg">
+    </audio>
+    <button class="music-toggle" id="musicToggle" aria-label="Toggle music">
+        <span class="music-icon">🔇</span>
+    </button>
+
     <!-- Floating hearts background -->
     <div class="floating-hearts" id="floatingHearts"></div>
 
     <!-- ENVELOPE STAGE -->
     <div id="envelopeStage">
-
         <div class="letter-intro">
-        <p class="intro-text">
-            Dear Jessie,
-        </p>
-        <p class="intro-text">
-            Every milestone we've celebrated together, you've always drawn something for me, and they've always been my most treasured gifts. While I've tried unlocking some artistic skill, I think I'm much better suited to coding.
-        </p>
-        <p class="intro-text intro-text--final">
-            So here's this! 💝
-        </p>
+            <p class="intro-text">
+                Jessie
+            </p>
+            <p class="intro-text">
+                Every milestone we've celebrated together, you've always drawn something for me, and they've always been my most treasured gifts. While I've tried unlocking some artistic skill, I think I'm much better suited to coding.
+            </p>
+            <p class="intro-text intro-text--final">
+                So here's this! 🙈
+            </p>
         </div>
-
+        
         <p class="envelope-instruction">Click to open your Valentine 💌</p>
         
         <div class="envelope" id="envelope">
@@ -44,12 +50,12 @@
         </div>
     </div>
 
-    <div class="container">
+    <!-- PUZZLE STAGE -->
+    <div class="container" id="puzzleContainer">
         <div class="modal-inner">
-            <!-- VIEW: Puzzle -->
             <div id="puzzleView" class="modal-view">
                 <h1 class="modal-title">Dear Jess...</h1>
-                <div class="puzzle-container" id="puzzleContainer">
+                <div class="puzzle-container" id="puzzleGameContainer">
                     <div class="puzzle-grid-wrap" id="puzzleGridWrap">
                         <div class="puzzle-grid" id="puzzleGrid"></div>
                         <div class="puzzle-full-image-overlay" id="puzzleFullImageOverlay">
@@ -60,40 +66,168 @@
                 <div class="move-counter" id="moveCounter">Moves: 0</div>
                 <div class="puzzle-reveal-text" id="puzzleRevealText">
                     <p class="complete-line">...you complete me.</p>
-                    <p class="valentine-question">Happy Valentine's Day! ❤️</p>
+                    <p class="valentine-question">Happy Valentine's Day Winkle! ❤️</p>
                     <button type="button" class="yes-only-btn" id="yesBtn">See what's inside 💝</button>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- VIEW: Success -->
-            <div id="successView" class="modal-view">
-                <div class="success-content">
-                    <p class="success-yay">You make every day brighter! ✨</p>
-                    <p class="success-message">
-                        Thank you for being you. For your smile that lights up my world, your kindness that warms my heart, and for every moment we share together.
-                    </p>
-                    <div class="success-gif-wrap">
-                        <img src="otter_val.gif" alt="Valentine's celebration" />
-                    </div>
-                    
-                    <div class="love-notes">
-                        <h3>Things I love about you:</h3>
-                        <ul>
-                            <li>Your infectious laugh that makes everything better</li>
-                            <li>The way you always know how to cheer me up</li>
-                            <li>Your adventurous spirit and willingness to try new things</li>
-                            <li>How you make ordinary moments feel special</li>
-                            <li>Your compassion and the way you care for others</li>
-                            <li>Every single day I get to spend with you</li>
-                        </ul>
-                    </div>
+    <!-- SUCCESS FULL PAGE -->
+    <div id="successPage" class="success-page">
+        <div class="success-scroll-container">
+            <div class="success-header">
+                <h1 class="success-title">You make every day brighter! ✨</h1>
+                <p class="success-intro">
+                    Thank you for being you. For your smile that lights up my world, your kindness that warms my heart, and for every moment we share together.
+                </p>
+            </div>
 
-                    <p class="success-message">
-                        Here's to many more memories, adventures, and lazy Sunday mornings together. Happy Valentine's Day, my love! 💕
-                    </p>
-                    
-                    <button type="button" class="reset-btn" id="resetBtn">Start over ↻</button>
+            <div class="success-gif-section">
+                <div class="success-gif-wrap">
+                    <img src="otter_val.gif" alt="Valentine's celebration" />
                 </div>
+            </div>
+
+            <div class="love-notes-section">
+                <div class="love-notes">
+                    <h3>My favourite Jessie things:</h3>
+                    <ul>
+                        <li>The cute sleepy heemanahooss in the morning</li>
+                        <li>Your giggles and smiles when I nibble your cheeks</li>
+                        <li>How you always offer to cook for me, and put your heart and soul into it</li>
+                        <li>Your cute little English phrases, like billy bargain HAHA</li>
+                        <li>How you never lose belief in me, be it studies, career or our relationship</li>
+                        <li>Every single day I get to spend with you</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="memory-gallery">
+                <h3 class="gallery-title">Our Favorite Moments</h3>
+                <div class="photo-grid" id="photoGrid">
+                    <div class="photo-card" data-memory="0">
+                        <div class="photo-frame">
+                            <img class="memory-photo" src="memories/memory-1.jpg" alt="Memory 1">
+                            <div class="photo-overlay">
+                                <span class="reveal-icon">✨</span>
+                                <p class="reveal-text">Click to reveal</p>
+                            </div>
+                        </div>
+                        <p class="photo-caption">Click to reveal a memory</p>
+                    </div>
+                    <div class="photo-card" data-memory="1">
+                        <div class="photo-frame">
+                            <img class="memory-photo" src="memories/memory-2.jpg" alt="Memory 2">
+                            <div class="photo-overlay">
+                                <span class="reveal-icon">✨</span>
+                                <p class="reveal-text">Click to reveal</p>
+                            </div>
+                        </div>
+                        <p class="photo-caption">Click to reveal a memory</p>
+                    </div>
+                    <div class="photo-card" data-memory="2">
+                        <div class="photo-frame">
+                            <img class="memory-photo" src="memories/memory-3.jpg" alt="Memory 3">
+                            <div class="photo-overlay">
+                                <span class="reveal-icon">✨</span>
+                                <p class="reveal-text">Click to reveal</p>
+                            </div>
+                        </div>
+                        <p class="photo-caption">Click to reveal a memory</p>
+                    </div>
+                    <div class="photo-card" data-memory="3">
+                        <div class="photo-frame">
+                            <img class="memory-photo" src="memories/memory-4.jpg" alt="Memory 4">
+                            <div class="photo-overlay">
+                                <span class="reveal-icon">✨</span>
+                                <p class="reveal-text">Click to reveal</p>
+                            </div>
+                        </div>
+                        <p class="photo-caption">Click to reveal a memory</p>
+                    </div>
+                    <div class="photo-card" data-memory="4">
+                        <div class="photo-frame">
+                            <img class="memory-photo" src="memories/memory-5.jpg" alt="Memory 5">
+                            <div class="photo-overlay">
+                                <span class="reveal-icon">✨</span>
+                                <p class="reveal-text">Click to reveal</p>
+                            </div>
+                        </div>
+                        <p class="photo-caption">Click to reveal a memory</p>
+                    </div>
+                    <div class="photo-card" data-memory="5">
+                        <div class="photo-frame">
+                            <img class="memory-photo" src="memories/memory-6.jpg" alt="Memory 6">
+                            <div class="photo-overlay">
+                                <span class="reveal-icon">✨</span>
+                                <p class="reveal-text">Click to reveal</p>
+                            </div>
+                        </div>
+                        <p class="photo-caption">Click to reveal a memory</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="love-letter-section">
+                <div class="love-letter">
+                    <h3>A Little Love Letter</h3>
+                    <p>
+                        From the moment we met, that evening in Polden Court, I knew there was something special about you. You looked at me with your glistening eyes and infectious smile and I fell, hopelessly so. Being your best friend all throughout first year was the greatest gift, because it taught me that it was possible to love someone more than anything in the world, even if they were nothing more than a friend.
+                    </p>
+                    <p>
+                        Whether its talking to each other for hours, sipping coffee next to each other, cooking dinner together or lazing around until the afternoon, there is nobody else I'd rather do it all with but you. You are my favourite person, my best friend.
+                    </p>
+
+                    <p>
+                        Thank you for being my partner, my best friend, and my favorite person. Here's to many more memories, inside jokes, and lazy Sunday mornings together.
+                    </p>
+                    <p class="letter-signature">
+                        All my love,<br>
+                        <span class="signature-name">Your Valentine, Aryan 💕</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="interactive-section">
+                <h3 class="interactive-title">Make a Wish! 🌟</h3>
+                <p class="interactive-subtitle">Click the heart and make a wish for us</p>
+                <button class="wish-heart" id="wishHeart">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <p class="wish-message" id="wishMessage"></p>
+            </div>
+
+            <div class="countdown-section">
+                <h3 class="countdown-title">Time Together</h3>
+                <div class="countdown-grid">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="daysCount">0</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hoursCount">0</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutesCount">0</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="secondsCount">0</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+                <p class="countdown-subtitle">...since Coffee #1 💖☕️</p>
+            </div>
+
+            <div class="final-message">
+                <p class="final-text">
+                    Here's to many more memories, adventures, and lazy Sunday mornings together. Happy Valentine's Day, my love! 💕
+                </p>
+                <button type="button" class="reset-btn" id="resetBtn">Start Over ↻</button>
             </div>
         </div>
     </div>

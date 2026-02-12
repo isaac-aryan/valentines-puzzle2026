@@ -293,7 +293,10 @@ const wishes = [
     'May our love grow stronger with each passing day 🌹',
     'Here\'s to always predicting what we\'re about to say ❤️',
     'To forever being each other\'s home 🏡',
-    'Wishing a million more dinner dates staring into each others\' eyes 🥺'
+    'Wishing a million more dinner dates staring into each others\' eyes 🥺',
+    'Wishing we one day watch Spurs vs Liverpool live ⚽️',
+    'To many more years of buying each other pints 🍻',
+    'May we always support each other and build each other up 🫂'
 ];
 
 wishHeart.addEventListener('click', () => {
